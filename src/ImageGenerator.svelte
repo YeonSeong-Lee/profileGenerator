@@ -2,19 +2,20 @@
 	import { onMount } from 'svelte';
 
 	onMount(async () => {
-		const canvas = document.getElementById("tutorial");
+		const canvas = document.getElementById("profileGenerator");
         if (canvas.getContext) {
           const ctx = canvas.getContext("2d");
 		  ctx.fillStyle = "rgb(200, 0, 0)";
 		  ctx.fillRect(10, 10, 50, 50);
 		  ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
           ctx.fillRect(30, 30, 50, 50);
+
         }
 	})
 </script>
 
 <div>
-	<canvas id="tutorial" width="400" height="400"></canvas>
+	<canvas id="profileGenerator" width="400" height="400"></canvas>
 </div>
 
 <style>
