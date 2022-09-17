@@ -1,26 +1,24 @@
 <script>
-	export let name;
+	import { onMount } from 'svelte';
+
+	onMount(async () => {
+		const canvas = document.getElementById("tutorial");
+        if (canvas.getContext) {
+          const ctx = canvas.getContext("2d");
+		  ctx.fillStyle = "rgb(200, 0, 0)";
+		  ctx.fillRect(10, 10, 50, 50);
+		  ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+          ctx.fillRect(30, 30, 50, 50);
+        }
+	})
 </script>
 
 <div>
-	{#if name}
-		<h1>{name}</h1>
-	{:else}
-		<h1>defalut image</h1>
-{/if}
+	<canvas id="tutorial" width="400" height="400"></canvas>
 </div>
 
 <style>
-	h1 {
-			color: #ff3e00;
-			text-transform: uppercase;
-			font-size: 4em;
-			font-weight: 100;
-		}
-
-		@media (min-width: 640px) {
-			div {
-				max-width: none;
-			}
-		}
+    canvas {
+        border: 1px solid black;
+      }
 </style>
