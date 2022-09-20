@@ -1,8 +1,8 @@
 <script>
 	import { beforeUpdate, tick } from 'svelte';
 	export let name;
-	import { rendering } from "./rendering.svelte"
-	
+	import { rendering } from "./_rendering.svelte"
+
 	beforeUpdate(async() => {
 		await tick();
 		rendering(name);

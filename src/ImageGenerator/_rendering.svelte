@@ -1,4 +1,6 @@
 <script context="module">
+	import { drawLetter } from "./_drawLetter.svelte";
+
 	export const rendering = (name) => {
 		const canvas = document.getElementById("profileGenerator");
         if (!canvas.getContext)
@@ -9,6 +11,6 @@
 			return ;
 		}
 		ctx.font = 'bold 42px serif';
-		ctx.strokeText(`${name}`, 50, 100);
+		drawLetter(name, ctx, canvas);
 	}
 </script>
