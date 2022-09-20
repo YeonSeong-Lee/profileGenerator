@@ -3,13 +3,20 @@
 	import Header from "./Header.svelte";
 	import Footer from "./Footer.svelte";
 	let inputValue;
+	let displayValue;
+
+	const keyup_handler = (event) => {
+		if (inputValue && (event?.key === 'Backspace' || event?.key === 'Delete'))
+			return ;
+		displayValue = inputValue
+	}
 </script>
 
 <Header />
 <main>
-	<ImageGenerator name={inputValue}/>
+	<ImageGenerator name={displayValue}/>
 	<p>make your team's profile</p>
-	<input type='text' bind:value={inputValue} />
+	<input type='text' bind:value={inputValue} on:keyup={keyup_handler}/>
 </main>
 <Footer />
 
