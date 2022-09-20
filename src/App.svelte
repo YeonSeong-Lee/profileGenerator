@@ -1,15 +1,15 @@
 <script>
-	import ImageGenerator from "./ImageGenerator.svelte";
+	import ImageGenerator from "./ImageGenerator/ImageGenerator.svelte";
 	import Header from "./Header.svelte";
 	import Footer from "./Footer.svelte";
-	let name;
+	let inputValue;
 </script>
 
 <Header />
 <main>
-	<ImageGenerator name={name}/>
+	<ImageGenerator name={inputValue}/>
 	<p>make your team's profile</p>
-	<input type='text' bind:value={name} />
+	<input type='text' bind:value={inputValue} />
 </main>
 <Footer />
 
