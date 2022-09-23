@@ -1,7 +1,9 @@
 <script context="module">
-	// TODO: 요소들 객체화 하기
+    import { Letter } from "./_Letter.svelte";
+
 	export const drawLetter = (name, ctx, canvas) => {
-		ctx.font = 'bold 60px serif';
-		ctx.strokeText(`${name[name.length - 1]}`, Math.random() * canvas.width, Math.random() * canvas.height);
+		const letter = new Letter(name[name.length - 1], canvas.width, canvas.height);
+		ctx.fillStyle = "rgb(200, 0, 0)"
+		ctx.stroke(letter);
 	}
 </script>
