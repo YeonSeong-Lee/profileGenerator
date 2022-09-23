@@ -6,4 +6,8 @@
 
 		return (`rgb(${red}, ${green}, ${blue}`)
 	}
+
+	export const randomSize = () => {
+		return Math.floor(Math.random() * 60 + 5);
+	}
 </script>
