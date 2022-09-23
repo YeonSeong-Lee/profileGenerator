@@ -8,7 +8,7 @@
 	const keyup_handler = (event) => {
 		if (inputValue && (event?.key === 'Backspace' || event?.key === 'Delete'))
 			return ;
-		displayValue = inputValue
+		displayValue = inputValue;
 	}
 </script>
 

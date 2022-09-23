@@ -10,7 +10,6 @@
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
 			return ;
 		}
-		ctx.font = 'bold 42px serif';
 		drawLetter(name, ctx, canvas);
 	}
 </script>
