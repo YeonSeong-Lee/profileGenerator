@@ -1,5 +1,5 @@
 <script context="module">
-    import { randomSize } from "./_random.svelte";
+    import { randomSize } from "../utils/_random.svelte";
 
 
 	export class Letter extends Path2D {

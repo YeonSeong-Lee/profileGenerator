@@ -1,6 +1,6 @@
 <script context="module">
     import { Letter } from "./_Letter.svelte";
-    import { randomRGB } from "./_random.svelte";
+    import { randomRGB } from "../utils/_random.svelte";
 
 	export const drawLetter = (name, ctx, canvas) => {
 		const letter = new Letter(name[name.length - 1], canvas.width, canvas.height);
