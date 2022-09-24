@@ -10,4 +10,11 @@
 	export const randomSize = () => {
 		return Math.floor(Math.random() * 60 + 5);
 	}
+
+	export const randomLocationWidth = () => {
+		return Math.floor(Math.random() * (parseInt(process.env.WIDTH, 10) + 1))
+	}
+	export const randomLocationHeight = () => {
+		return Math.floor(Math.random() * (parseInt(process.env.HEIGHT, 10) + 1))
+	}
 </script>
