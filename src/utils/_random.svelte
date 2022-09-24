@@ -1,10 +1,11 @@
 <script context="module">
-	export const randomRGB = () => {
+	export const randomColor = () => {
 		const red	= Math.floor(Math.random() * 256);
 		const green	= Math.floor(Math.random() * 256);
 		const blue	= Math.floor(Math.random() * 256);
+		const alpha = 0.4;
 
-		return (`rgb(${red}, ${green}, ${blue}`)
+		return (`rgba(${red}, ${green}, ${blue}, ${alpha}`)
 	}
 
 	export const randomSize = () => {
