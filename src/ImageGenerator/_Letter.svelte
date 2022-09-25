@@ -5,8 +5,12 @@
 		constructor(char)
 		{
 			super();
+			this.x = randomLocationWidth();
+			this.y = randomLocationHeight();
 			this.value = char;
-			this.rect(randomLocationWidth(), randomLocationHeight(), randomSize(), randomSize());
+		}
+		drawRect() {
+			this.rect(this.x, this.y, randomSize(), randomSize());
 		}
 	}
 </script>
