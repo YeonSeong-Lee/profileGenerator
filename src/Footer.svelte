@@ -1,3 +1,3 @@
 <footer>
-	process.env.EMAIL
+	{process.env.EMAIL}
 </footer>
