@@ -1,3 +1,3 @@
 <footer>
-	yeonseong.dev@gmail.com
+	process.env.EMAIL
 </footer>
