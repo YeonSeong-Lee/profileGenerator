@@ -12,5 +12,17 @@
 		drawRect() {
 			this.rect(this.x, this.y, randomSize(), randomSize());
 		}
+		setX(num) {
+			this.x = num;
+		}
+		setY(num) {
+			this.y = num;
+		}
+		getX() {
+			return this.x;
+		}
+		getY() {
+			return this.y;
+		}
 	}
 </script>
