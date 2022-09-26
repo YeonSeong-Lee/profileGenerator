@@ -15,5 +15,5 @@
 <style>
     canvas {
         border: 1px solid black;
-      }
+    }
 </style>
