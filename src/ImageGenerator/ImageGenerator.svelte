@@ -6,6 +6,7 @@
 		await tick();
 		rendering(name);
 	})
+	
 </script>
 
 <div>

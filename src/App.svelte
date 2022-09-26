@@ -9,6 +9,7 @@
 		if (inputValue && (event?.key === 'Backspace' || event?.key === 'Delete'))
 			return ;
 		displayValue = inputValue;
+
 	}
 </script>
 
