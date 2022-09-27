@@ -1,28 +1,37 @@
 <script context="module">
+    import { init } from "svelte/internal";
     import { randomLocationHeight, randomLocationWidth, randomSize } from "../utils/_random.svelte";
 
 	export class Letter extends Path2D {
-		constructor(char)
+		constructor(char, x, y)
 		{
 			super();
-			this.x = randomLocationWidth();
-			this.y = randomLocationHeight();
+			this.x;
+			this.y;
+			this.value;
+			this.init(char, x, y);
+		}
+
+		init(char, x, y) {
 			this.value = char;
+			this.x = x ;
+			this.y = y;
 		}
+
 		drawRect() {
-			this.rect(this.x, this.y, randomSize(), randomSize());
+			this.rect(this.x, this.y, 42, 42);
 		}
-		setX(num) {
-			this.x = num;
+
+		get x() {
+			return this._x;
 		}
-		setY(num) {
-			this.y = num;
-		}
-		getX() {
-			return this.x;
-		}
-		getY() {
-			return this.y;
+
+		set x(value) {
+			if (value >= parseInt(process.env.WIDTH, 10) - 42) {
+				this._x = parseInt(process.env.WIDTH, 10) - 42;
+				return;
+			}
+			this._x = value;
 		}
 	}
 </script>
