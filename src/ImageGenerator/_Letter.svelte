@@ -1,7 +1,4 @@
 <script context="module">
-    import { init } from "svelte/internal";
-    import { randomLocationHeight, randomLocationWidth, randomSize } from "../utils/_random.svelte";
-
 	export class Letter extends Path2D {
 		constructor(char, x, y)
 		{
@@ -27,11 +24,28 @@
 		}
 
 		set x(value) {
-			if (value >= parseInt(process.env.WIDTH, 10) - 42) {
-				this._x = parseInt(process.env.WIDTH, 10) - 42;
-				return;
-			}
-			this._x = value;
+			this._x = placeInCanvas(value);
 		}
+
+		get y() {
+			return this._y;
+		}
+
+		set y(value) {
+			this._y = placeInCanvas(value);
+		}
+	}
+
+	const placeInCanvas = (value) => {
+			const max_width = parseInt(process.env.WIDTH, 10);
+			if (value < max_width && value >= 0) {
+				return value;
+			}
+			if (value >= max_width) {
+				return placeInCanvas(2 * (max_width - 42) - value);
+			}
+			if (value < 0) {
+				return placeInCanvas(-value);
+			}
 	}
 </script>
