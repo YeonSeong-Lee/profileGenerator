@@ -1,15 +1,17 @@
 <script context="module">
 	export class Letter extends Path2D {
-		constructor(char, x, y)
+		constructor(ctx, char, x, y)
 		{
 			super();
 			this.x;
 			this.y;
+			this.ctx;
 			this.value;
-			this.init(char, x, y);
+			this.init(ctx, char, x, y);
 		}
 
-		init(char, x, y) {
+		init(ctx, char, x, y) {
+			this.ctx = ctx;
 			this.value = char;
 			this.x = x ;
 			this.y = y;
@@ -17,6 +19,11 @@
 
 		drawRect() {
 			this.rect(this.x, this.y, 42, 42);
+		}
+
+		drawValue() {
+			this.rect(this.x, this.y, 10, 10);
+			this.ctx.fill(this);
 		}
 
 		get x() {

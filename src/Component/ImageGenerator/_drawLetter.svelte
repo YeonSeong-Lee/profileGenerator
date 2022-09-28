@@ -8,9 +8,7 @@
 
 	export const drawLetter = async (name, ctx) => {
 		ctx.fillStyle = randomColor();
-		ctx.fillStyle = randomColor();
-		let letter = new Letter(name[name.length - 1], 0, 0);
-		letter.drawRect();
-		ctx.fill(letter);
+		let letter = new Letter(ctx, name[name.length - 1], 0, 0);
+		letter.drawValue();
 	}
 </script>
