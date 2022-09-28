@@ -1,36 +1,10 @@
 <script>
-	import ImageGenerator from "./ImageGenerator/ImageGenerator.svelte";
-	import Header from "./Header.svelte";
-	import Footer from "./Footer.svelte";
-	let inputValue;
-	let displayValue;
-
-	const keyup_handler = (event) => {
-		if (inputValue && (event?.key === 'Backspace' || event?.key === 'Delete'))
-			return ;
-		displayValue = inputValue;
-
-	}
+	import Header from "./Component/Header.svelte";
+	import Main from "./Component/Main.svelte";
+	import Footer from "./Component/Footer.svelte";
 </script>
 
 <Header />
-<main>
-	<ImageGenerator name={displayValue}/>
-	<p>make your team's profile</p>
-	<input type='text' bind:value={inputValue} on:keyup={keyup_handler}/>
-</main>
+<Main />
 <Footer />
 
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>

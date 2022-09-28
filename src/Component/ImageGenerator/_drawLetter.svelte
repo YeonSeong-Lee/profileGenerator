@@ -1,6 +1,6 @@
 <script context="module">
     import { Letter } from "./_Letter.svelte";
-    import { randomColor } from "../utils/_random.svelte";
+    import { randomColor } from "../../utils/_random.svelte";
 
 	function sleep(sec) {
   		return new Promise(resolve => setTimeout(resolve, sec * 1000));
