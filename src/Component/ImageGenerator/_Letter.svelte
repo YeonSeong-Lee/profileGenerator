@@ -19,6 +19,7 @@
 
 		drawRect() {
 			this.rect(this.x, this.y, 42, 42);
+			this.ctx.fill(this);
 		}
 
 		drawValue() {
