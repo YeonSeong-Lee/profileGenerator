@@ -1,20 +1,24 @@
 <script context="module">
+	import { randomSize } from "../../utils/_random.svelte";
+
 	export class Letter extends Path2D {
-		constructor(ctx, char, x, y)
+		constructor(ctx, char, x, y, index)
 		{
 			super();
 			this.x;
 			this.y;
+			this.index;
 			this.ctx;
 			this.value;
-			this.init(ctx, char, x, y);
+			this.init(ctx, char, x, y, index);
 		}
-
-		init(ctx, char, x, y) {
+		// TODO: init 인자 순서 정리
+		init(ctx, char, x, y, index) {
 			this.ctx = ctx;
 			this.value = char;
 			this.x = x ;
 			this.y = y;
+			this.index = index;
 		}
 
 		drawRect() {
@@ -23,8 +27,8 @@
 		}
 
 		drawValue() {
-			this.rect(this.x, this.y, 10, 10);
-			this.ctx.fill(this);
+			this.ctx.font = `${randomSize()}px Arial`;
+			this.ctx.strokeText(this.value, this.x, this.y);
 		}
 
 		get x() {

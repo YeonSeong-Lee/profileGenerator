@@ -9,13 +9,22 @@
 	}
 
 	export const randomSize = () => {
-		return Math.floor(Math.random() * 60 + 5);
+		return Math.floor(Math.random() * 60 + 100);
 	}
 
-	export const randomLocationWidth = () => {
-		return Math.floor(Math.random() * (parseInt(process.env.WIDTH, 10) + 1))
+	export const randomNumber = (min, max) => {
+		if (min > max) {
+			console.log("WARNING: max should bigger than min")
+		}
+		return Math.random() * (max - min + 1) + min;
 	}
-	export const randomLocationHeight = () => {
-		return Math.floor(Math.random() * (parseInt(process.env.HEIGHT, 10) + 1))
+
+	// TODO: 변동을 작게. Math.random()을 곱하는 방법은 0으로 쏠리는 현상이 있음
+	export const randomLocationWidth = (index) => {
+		const weight = 42;
+		return weight * index;
+	}
+	export const randomLocationHeight = (index) => {
+		return (parseInt(process.env.HEIGHT, 10) / 2) + 40;
 	}
 </script>
