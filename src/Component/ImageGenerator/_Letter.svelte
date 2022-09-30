@@ -27,7 +27,7 @@
 			this.ctx.shadowColor = "black";
 			this.ctx.fill(this);
 		}
-
+	// TODO: 구분선의 색 정하기. -> 아마 보색..? 검정색..?
 		drawValue() {
 			this.ctx.fillStyle = randomColor();
 			this.ctx.strokeStyle = randomColor();
