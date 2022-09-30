@@ -1,5 +1,5 @@
 <script context="module">
-	import { randomSize } from "../../utils/_random.svelte";
+	import { randomColor, randomSize } from "../../utils/_random.svelte";
 
 	export class Letter extends Path2D {
 		constructor(ctx, char, x, y, index)
@@ -23,11 +23,17 @@
 
 		drawRect() {
 			this.rect(this.x, this.y, 42, 42);
+			this.ctx.fillStyle = randomColor();
+			this.ctx.shadowColor = "black";
 			this.ctx.fill(this);
 		}
 
 		drawValue() {
+			this.ctx.fillStyle = randomColor();
+			this.ctx.strokeStyle = randomColor();
+			this.ctx.shadowColor = "black";
 			this.ctx.font = `${randomSize()}px Arial`;
+			this.ctx.fillText(this.value, this.x, this.y);
 			this.ctx.strokeText(this.value, this.x, this.y);
 		}
 
